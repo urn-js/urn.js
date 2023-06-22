@@ -29,5 +29,5 @@
 		"lucia-auth": "^1.7.1",
 		"zod": "^3.21.4"
 	},
-	"type": "module"
+	"type": "module",
 }

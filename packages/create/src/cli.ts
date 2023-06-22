@@ -6,6 +6,9 @@ const findup = await import('find-up');
 const { findUp } = findup
 const ora = await import('ora');
 const { oraPromise } = ora;
+import { exec } from 'node:child_process';
+import { promisify } from 'node:util';
+const promisexec = promisify(exec)
 // @ts-ignore
 const thisdir = path.dirname(await findUp('package.json', { cwd: path.dirname(new URL(import.meta.url).pathname) }));
 const calldir = process.cwd()
@@ -24,6 +27,9 @@ async function generateConfig(spinner: Ora) {
         scripts: {
             "build": "urnbuild"
         }
+    })
+    promisexec("npm i @urn.js/create", {
+        cwd: calldir
     })
     spinner.succeed("Created package.json")
     spinner.start("Creating urn.json")

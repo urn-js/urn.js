@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { copy, writeJSON, createFile } from 'fs-extra';
+import { copy, writeJson, createFile } from 'fs-extra';
 import path from 'node:path';
 import { Ora } from 'ora';
 const findup = await import('find-up');
@@ -19,7 +19,7 @@ async function clone(spinner: Ora) {
 async function generateConfig(spinner: Ora) {
     spinner.start("Creating package.json")
     await createFile(`${calldir}/package.json`)
-    await writeJSON(`${calldir}/package.json`, {
+    await writeJson(`${calldir}/package.json`, {
         name: 'urn-app',
         scripts: {
             "build": "urnbuild"
@@ -30,7 +30,7 @@ async function generateConfig(spinner: Ora) {
     await createFile(`${calldir}/urn.json`)
     spinner.succeed("Created urn.json")
     spinner.start("Writing urn.json")
-    await writeJSON(`${calldir}/urn.json`, {
+    await writeJson(`${calldir}/urn.json`, {
         features: []
     })
     spinner.succeed("Wrote urn.json")

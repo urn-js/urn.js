@@ -6,6 +6,7 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@types/node": "^20.3.1",
     "lerna": "^7.0.2"
   }
 }

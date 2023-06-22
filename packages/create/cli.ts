@@ -1,2 +1,8 @@
 #!/usr/bin/env node
-console.log("This code should initialize a new server")
+import prompt from 'prompt';
+import { copy } from 'fs-extra/esm.mjs';
+import { oraPromise } from 'ora';
+console.log(process.env.NODE_DIR)
+async function clone() {
+
+}

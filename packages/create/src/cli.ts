@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { copy, writeJson, createFile } from 'fs-extra';
+import { copy, writeJson, createFile } from 'fs-extra/esm';
 import path from 'node:path';
 import { Ora } from 'ora';
 const findup = await import('find-up');

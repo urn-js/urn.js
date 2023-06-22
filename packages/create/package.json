@@ -1,6 +1,6 @@
 {
   "name": "@urn.js/create",
-  "version": "0.1.3-alpha.7",
+  "version": "0.1.4-alpha.0",
   "description": "This is the urn.js server creator",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
     "urnbuild": "./out/urnbuild.js"
   },
   "license": "ISC",
+  "type": "module",
   "gitHead": "0f64671d0f9f489cc01df1c227b6052ec3c82ef9",
   "dependencies": {
     "@types/fs-extra": "^11.0.1",

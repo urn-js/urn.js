@@ -1,0 +1,9 @@
+{
+   "name": "urn-app",
+   "scripts": {
+      "build": "urnbuild"
+   },
+   "dependencies": {
+      "@urn.js/create": "^0.1.4-alpha.6"
+   }
+}

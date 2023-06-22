@@ -1,0 +1,2 @@
+[template.environment]
+    DATABASE_URL = "mongo://user:pass@id.cluster.saas.app/data?smth=abc123"

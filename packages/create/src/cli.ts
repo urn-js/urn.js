@@ -13,6 +13,8 @@ const promisexec = promisify(exec)
 const thisdir = path.dirname(await findUp('package.json', { cwd: path.dirname(new URL(import.meta.url).pathname) }));
 const calldir = process.cwd()
 
+if(thisdir.startsWith(calldir)) throw new Error('Attempted to run create in node_modules, please run globaly')
+
 async function clone(spinner: Ora) {
     spinner.start("Cloning server source.")
     await copy(`${thisdir}/server`, `${calldir}/server`)
@@ -27,10 +29,12 @@ async function generateConfig(spinner: Ora) {
         scripts: {
             "build": "urnbuild"
         }
+    }, {
+        spaces: '   '
     })
-    promisexec("npm i @urn.js/create", {
+    await promisexec("npm i @urn.js/create", {
         cwd: calldir
-    })
+    }) // make sure we are always intalling the correct version.
     spinner.succeed("Created package.json")
     spinner.start("Creating urn.json")
     await createFile(`${calldir}/urn.json`)
@@ -38,6 +42,8 @@ async function generateConfig(spinner: Ora) {
     spinner.start("Writing urn.json")
     await writeJson(`${calldir}/urn.json`, {
         features: []
+    }, {
+        spaces: '   '
     })
     spinner.succeed("Wrote urn.json")
 }
@@ -46,6 +52,7 @@ async function main() {
     await oraPromise(async (spinner) => {
         await clone(spinner)
         await generateConfig(spinner)
+        spinner.stop();
     }, {
         spinner: 'arc',
         color: 'cyan',

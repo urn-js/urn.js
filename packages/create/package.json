@@ -11,5 +11,6 @@
     "urnbuild": "./out/build.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "gitHead": "002a65577eb7abad324915e946f3ecaa98f19eab"
 }

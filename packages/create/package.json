@@ -1,16 +1,16 @@
 {
   "name": "@urn.js/create",
   "version": "0.1.3-alpha.3",
-  "description": "This is the library used to create an urn.js server",
+  "description": "This is the urn.js server creator",
   "main": "index.js",
   "scripts": {
     "prepublish": "tsc"
   },
+  "author": "",
   "bin": {
     "create": "./out/cli.js",
-    "urnbuild": "./out/build.js"
+    "urnbuild": "./out/urnbuild.js"
   },
-  "author": "",
   "license": "ISC",
-  "gitHead": "864f07ff6ed244dcfbdaa8e56be9da8de2382f5b"
+  "gitHead": "cf2d2d440274ba1563af9d520d251a71136e7a99"
 }

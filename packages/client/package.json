@@ -1,6 +1,6 @@
 {
   "name": "@urn.js/client",
-  "version": "0.1.4-alpha.6",
+  "version": "0.1.4-alpha.7",
   "description": "This is the urn.js client",
   "main": "index.js",
   "scripts": {

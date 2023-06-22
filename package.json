@@ -11,6 +11,7 @@
   },
   "scripts": {
     "git": "git add . && git commit -a",
-    "publish": "lerna publish --force-publish --preid alpha --yes"
+    "publish": "lerna publish --force-publish --preid alpha --yes",
+    "build": "cd packages/client && tsc && cd ../create && tsc && cd ../../"
   }
 }

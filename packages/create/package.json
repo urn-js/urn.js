@@ -1,6 +1,6 @@
 {
   "name": "@urn.js/create",
-  "version": "0.1.4-alpha.4",
+  "version": "0.1.4-alpha.5",
   "description": "This is the urn.js server creator",
   "main": "index.js",
   "scripts": {

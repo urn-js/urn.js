@@ -3,11 +3,18 @@
 ```ts
 import urn from '@urn.js/client';
 const client = urn({
-    server: 'whatever.something.huh',
-    token: 'authsessiontoken' // if not provided, go to {server}/auth
+    server: 'https://whatever.something.huh/',
+    ably: 'ably subscribe key'
 })
 
 async function createGame() {
-    client.games.create()
+    const { game, error } = client.games.create({
+        settings: {
+            maxplayers: 9,
+        }
+    })
+    if(error) throw error // or display error in whatever way
 }
+
+client.start()
 ```

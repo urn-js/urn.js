@@ -5,7 +5,8 @@ const findup = await import('find-up');
 const { findUp } = findup
 const ora = await import('ora');
 const { oraPromise } = ora;
-const thisdir = await findUp('package.json', { cwd: path.dirname(new URL(import.meta.url).pathname) });
+// @ts-ignore
+const thisdir = path.dirname(await findUp('package.json', { cwd: path.dirname(new URL(import.meta.url).pathname) }));
 const calldir = process.cwd()
 console.log(thisdir, calldir)
 async function clone() {

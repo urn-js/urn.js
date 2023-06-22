@@ -1,0 +1,15 @@
+{
+  "name": "@urn.js/create",
+  "version": "0.1.0-alpha.0",
+  "description": "This is the library used to create an urn.js server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "create": "./out/cli.js",
+    "urnbuild": "./out/build.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
